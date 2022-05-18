@@ -1,10 +1,10 @@
 ﻿  main.cpp
-C:\Users\danbo\Desktop\yaaay\AIEYear1Samples-master\RaylibStarterCPP\main.cpp(48,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\danbo\Desktop\yaaay\AIEYear1Samples-master\RaylibStarterCPP\main.cpp(51,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\danbo\Desktop\yaaay\AIEYear1Samples-master\RaylibStarterCPP\main.cpp(52,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\danbo\Desktop\yaaay\AIEYear1Samples-master\RaylibStarterCPP\main.cpp(53,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\danbo\Desktop\yaaay\AIEYear1Samples-master\RaylibStarterCPP\main.cpp(60,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\danbo\Desktop\yaaay\AIEYear1Samples-master\RaylibStarterCPP\main.cpp(62,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\danbo\Desktop\yaaay\AIEYear1Samples-master\RaylibStarterCPP\main.cpp(160,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\danbo\Desktop\yaaay\AIEYear1Samples-master\RaylibStarterCPP\main.cpp(160,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  RaylibStarterCPP.vcxproj -> C:\Users\danbo\Desktop\yaaay\AIEYear1Samples-master\bin\Win32\Debug\RaylibStarterCPP.exe
+D:\GitHubs\PING-PONG\RaylibStarterCPP\main.cpp(48,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\main.cpp(51,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\main.cpp(52,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\main.cpp(53,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\main.cpp(60,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\main.cpp(62,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\main.cpp(192,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\main.cpp(192,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  RaylibStarterCPP.vcxproj -> D:\GitHubs\PING-PONG\bin\Win32\Debug\RaylibStarterCPP.exe

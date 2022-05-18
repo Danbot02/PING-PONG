@@ -21,7 +21,7 @@ Vector2 PP2;
 Vector2 EP1;
 Vector2 EP2;
 
-int playerSpeed = 2;
+int playerSpeed = 4;
 int playerScore = 0;
 const char *playerScoreT;
 
@@ -31,7 +31,7 @@ const char *enemyScoreT;
 
 bool playing = false;
 float ballAngle;
-int ballSpeed = 2;
+float ballSpeed = 4;
 float ballXDir = 0;
 float ballYDir = 0;
 float ballXPos = 0;
@@ -68,12 +68,16 @@ int main(int argc, char* argv[])
     InitWindow(screenWidth, screenHeight, "PING PONG");
 
     SetTargetFPS(60);
-    //Reupload
+
     //Main game loop
     while (!WindowShouldClose())
     {
         if (playing == false && IsKeyDown(KEY_SPACE))
         {
+            ballXPos = PP1.x + 5;
+            ballYPos = PP1.y + 50;
+            ballSpeed = 4;
+
             srand(static_cast <unsigned> (time(0)));
             ballAngle = static_cast <float> (rand() % 50);
             int PN = rand() % 2;
@@ -96,44 +100,72 @@ int main(int argc, char* argv[])
         {
             ballXPos += ballXDir * ballSpeed;
             ballYPos += ballYDir * ballSpeed;
-        }
 
-        if (IsKeyDown(KEY_UP) == true)
-        {
-            PP1.y -= playerSpeed;
-            PP2.y -= playerSpeed;
-        }
+            if (IsKeyDown(KEY_UP) == true)
+            {
+                PP1.y -= playerSpeed;
+                PP2.y -= playerSpeed;
+            }
 
-        if (IsKeyDown(KEY_DOWN) == true)
-        {
-            PP1.y += playerSpeed;
-            PP2.y += playerSpeed;
-        }
+            if (IsKeyDown(KEY_DOWN) == true)
+            {
+                PP1.y += playerSpeed;
+                PP2.y += playerSpeed;
+            }
 
-        if (ballYPos <= 600 - 10)
-        {
-            ballYDir = ballYDir * (-1);
-        }
+            if (ballYPos < EP1.y + 50)
+            {
+                EP1.y -= 4;
+                EP2.y -= 4;
+            }
 
-        if (ballYPos >= 70)
-        {
-            ballYDir = ballYDir * (-1);
-        }
+            if (ballYPos > EP2.y - 50)
+            {
+                EP1.y += 4;
+                EP2.y += 4;
+            }
 
-        if (ballXPos <= 25)
-        {
-            enemyScore += 1;
-            ballXPos = PP1.x + 5;
-            ballYPos = PP1.y + 50;
-            playing = false;
-        }
-        else
-        if (ballXPos >= screenWidth - 25)
-        {
-            playerScore += 1;
-            ballXPos = PP1.x + 5;
-            ballYPos = PP1.y + 50;
-            playing = false;
+            if (ballXPos <= PP1.x + 5 && ballYPos > PP1.y - 2 && ballYPos < PP2.y + 2)
+            {
+                ballXDir = ballXDir * (-1);
+                ballSpeed += 0.5;
+            }
+
+            if (ballXPos >= EP1.x - 5 && ballYPos > EP1.y - 2 && ballYPos < EP2.y + 2)
+            {
+                ballXDir = ballXDir * (-1);
+                ballSpeed += 0.5;
+            }
+
+            if (ballYPos <= 600 - 10)
+            {
+                ballYDir = ballYDir * (-1);
+            }
+
+            if (ballYPos >= 70)
+            {
+                ballYDir = ballYDir * (-1);
+            }
+
+            if (ballXPos <= 25)
+            {
+                enemyScore += 1;
+                PP1.y = 300 - 50;
+                PP2.y = 300 + 50;
+                EP1.y = 300 - 50;
+                EP2.y = 300 + 50;
+                playing = false;
+            }
+            else
+            if (ballXPos >= screenWidth - 25)
+            {
+                playerScore += 1;
+                PP1.y = 300 - 50;
+                PP2.y = 300 + 50;
+                EP1.y = 300 - 50;
+                EP2.y = 300 + 50;
+                playing = false;
+            }
         }
 
         std::string s1 = std::to_string(playerScore);
