@@ -1,50 +1,30 @@
+#include "game.h"
 #include <iostream>
 #include <sstream>
 #include <ctime>
 #include <cstdlib>
-#include "game.h"
 #include "math.h"
 #include "raylib.h"
 #include "raygui.h"
 
-#define RAYGUI_IMPLEMENTATION
-#define RAYGUI_SUPPORT_ICONS
-#define MAX_DIGI 2
+Game::Game() {}
 
-Vector2 TLC;
-Vector2 TRC;
-Vector2 BLC;
-Vector2 BRC;
+Game::~Game() {}
 
-Vector2 PP1;
-Vector2 PP2;
-
-Vector2 EP1;
-Vector2 EP2;
-
-const char* scoreBT;
-
-int DifficultySpeed = 4;
-
-int playerSpeed = 4;
-int playerScore = 0;
-
-int enemySpeed = 2;
-int enemyScore = 0;
-
-bool playing = false;
-float ballAngle;
-float ballSpeed = 4;
-float ballXDir = 0;
-float ballYDir = 0;
-float ballXPos = 0;
-float ballYPos = 0;
-
-int gameloop(int argc, char* argv[])
+void Game::Initial()
 {
-    //Initialization
-    int screenWidth = 800;
-    int screenHeight = 600;
+    //Initialization of game window
+    screenWidth = 800;
+    screenHeight = 600;
+    InitWindow(screenWidth, screenHeight, "PING PONG");
+    SetTargetFPS(60);
+
+    playing = false;
+
+    playerSpeed = 4;
+    enemySpeed = 4;
+    DifficultySpeed = 4;
+    ballSpeed = 4;
 
     TLC.x = 0;
     TLC.y = 60;
@@ -67,9 +47,12 @@ int gameloop(int argc, char* argv[])
 
     ballXPos = PP1.x + 5;
     ballYPos = PP1.y + 50;
+}
 
+void Game::GameLoop()
+{
     //Main game loop
-    while (!IsKeyDown(KEY_ESCAPE))
+    while (!IsKeyPressed(KEY_ESCAPE))
     {
         if (playing == false && IsKeyDown(KEY_SPACE))
         {
@@ -207,8 +190,4 @@ int gameloop(int argc, char* argv[])
 
         EndDrawing();
     }
-
-    CloseWindow();
-
-    return 0;
 }

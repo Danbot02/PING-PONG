@@ -1,13 +1,10 @@
-#include "raylib.h"
-#include "menu.h"
+#include "game.h"
 
 int main(int argc, char* argv[])
 {
-    //Central game loop
-    //while (true)
-    //{
-    menu(menuloop());
-    //}
-
+    Game game = Game();
+    game.Initial();
+    game.GameLoop();
     CloseWindow();
+    return 0;
 }
