@@ -1,4 +1,5 @@
-#include "game.h"
+#include "Menu.h"
+#include "Game.h"
 #include <iostream>
 #include <sstream>
 #include <ctime>
@@ -8,16 +9,12 @@
 #include "raygui.h"
 
 Game::Game() {}
-
 Game::~Game() {}
 
 void Game::Initial()
 {
-    //Initialization of game window
-    screenWidth = 800;
-    screenHeight = 600;
-    InitWindow(screenWidth, screenHeight, "PING PONG");
-    SetTargetFPS(60);
+    screenWidth = GetScreenWidth();
+    screenHeight = GetScreenHeight();
 
     playing = false;
 
@@ -47,6 +44,8 @@ void Game::Initial()
 
     ballXPos = PP1.x + 5;
     ballYPos = PP1.y + 50;
+
+    std::cout << "Game Initialized" << std::endl;
 }
 
 void Game::GameLoop()

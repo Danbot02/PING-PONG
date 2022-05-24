@@ -7,10 +7,6 @@
 #include "raylib.h"
 #include "raygui.h"
 
-
-#define RAYGUI_IMPLEMENTATION
-#define RAYGUI_SUPPORT_ICONS
-
 class Game
 {
 public:
