@@ -1,3 +1,15 @@
-﻿  Menu.cpp
-D:\GitHubs\PING-PONG\RaylibStarterCPP\Menu.cpp(79): warning C4715: 'Menu::colour': not all control paths return a value
+﻿  Game.cpp
+D:\GitHubs\PING-PONG\RaylibStarterCPP\Game.cpp(29,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\Game.cpp(32,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\Game.cpp(33,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\Game.cpp(34,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\Game.cpp(43,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\Game.cpp(45,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\Game.cpp(147,33): warning C4305: '+=': truncation from 'double' to 'float'
+D:\GitHubs\PING-PONG\RaylibStarterCPP\Game.cpp(191,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\Game.cpp(191,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\Game.cpp(258,33): warning C4305: '+=': truncation from 'double' to 'float'
+D:\GitHubs\PING-PONG\RaylibStarterCPP\Game.cpp(264,33): warning C4305: '+=': truncation from 'double' to 'float'
+D:\GitHubs\PING-PONG\RaylibStarterCPP\Game.cpp(308,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GitHubs\PING-PONG\RaylibStarterCPP\Game.cpp(308,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   RaylibStarterCPP.vcxproj -> D:\GitHubs\PING-PONG\bin\Win32\Debug\RaylibStarterCPP.exe
