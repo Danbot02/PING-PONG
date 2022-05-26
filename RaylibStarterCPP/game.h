@@ -45,7 +45,7 @@ private:
 	const char* scoreBT; //Const Char* for use of displaying the scoreboard
 
 	int playerSpeed; //The speed level which determins how fast the player stick can more used in both single and multi player
-	int DifficultySpeed; //Difficulty speed level which determins how fast the enemy stick can more in single player
+	int difficultySpeed; //Difficulty speed level which determins how fast the enemy stick can more in single player
 
 	int playerScore; //The score for the player
 	int enemyScore; //The score for the enemy and second player

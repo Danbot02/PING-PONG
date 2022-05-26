@@ -20,7 +20,7 @@ void Game::Initial()
 
     //Setting the speed and difficulty of the player, enemy and the ball
     playerSpeed = 4;
-    DifficultySpeed = 4;
+    difficultySpeed = 4;
     ballSpeed = 4;
 
     //Setting the points for the game border
@@ -105,14 +105,14 @@ void Game::GameLoop1()
             {
                 if (ballYDir > 0)
                 {
-                    EP1.y -= ballYDir * DifficultySpeed;
-                    EP2.y -= ballYDir * DifficultySpeed;
+                    EP1.y -= ballYDir * difficultySpeed;
+                    EP2.y -= ballYDir * difficultySpeed;
                 }
                 else
                 if (ballYDir < 0)
                 {
-                    EP1.y += ballYDir * DifficultySpeed;
-                    EP2.y += ballYDir * DifficultySpeed;
+                    EP1.y += ballYDir * difficultySpeed;
+                    EP2.y += ballYDir * difficultySpeed;
                 }
             }
 
@@ -122,35 +122,30 @@ void Game::GameLoop1()
             {
                 if (ballYDir > 0)
                 {
-                    EP1.y += ballYDir * DifficultySpeed;
-                    EP2.y += ballYDir * DifficultySpeed;
+                    EP1.y += ballYDir * difficultySpeed;
+                    EP2.y += ballYDir * difficultySpeed;
                 }
                 else
                 if (ballYDir < 0)
                 {
-                    EP1.y -= ballYDir * DifficultySpeed;
-                    EP2.y -= ballYDir * DifficultySpeed;
+                    EP1.y -= ballYDir * difficultySpeed;
+                    EP2.y -= ballYDir * difficultySpeed;
                 }
             }
 
-            if (ballXPos <= PP1.x + 5 && ballYPos > PP1.y - 2 && ballYPos < PP2.y + 2) //If the ball hits the right-side of the player then reverse the ball X directional speed and increase overal ball speed
+            if (ballXPos <= PP1.x + 5 && ballYPos > PP1.y - 2 && ballYPos < PP2.y + 2) //If the ball hits the right-side of the player then reverse the ball X directional % and increase overal ball speed
             {
                 ballXDir = ballXDir * (-1);
                 ballSpeed += 0.1;
             }
 
-            if (ballXPos >= EP1.x - 5 && ballYPos > EP1.y - 2 && ballYPos < EP2.y + 2) //If the ball hits the left-side of the enemy then reverse the ball X directional speed and increase overal ball speed
+            if (ballXPos >= EP1.x - 5 && ballYPos > EP1.y - 2 && ballYPos < EP2.y + 2) //If the ball hits the left-side of the enemy then reverse the ball X directional % and increase overal ball speed
             {
                 ballXDir = ballXDir * (-1);
                 ballSpeed += 0.1;
             }
 
-            if (ballYPos >= screenHeight - 10) //If the ball Y position is > or = the screen height - 10 (The game border lower limit) then invert the vertical directional speed
-            {
-                ballYDir = ballYDir * (-1);
-            }
-
-            if (ballYPos <= 70) //If the ball Y position is < or = 70 (The game border upper limit) then invert the vertical directional speed
+            if (ballYPos <= 70 || ballYPos >= screenHeight - 10) //If the ball Y position is > = < the game border upper/lower limit then invert the vertical directional %
             {
                 ballYDir = ballYDir * (-1);
             }
